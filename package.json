@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/xk86/webbed-site#readme",
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@11ty/eleventy-plugin-webc": "^0.11.2"
   }
 }
