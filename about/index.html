@@ -1,6 +1,76 @@
-<h1>im cat</h1>
+<!doctype html>
+<html>
+<head><style>
+    :root {
+      --main-bg-color: rgb(174, 231, 195);
+    }
+
+    html, body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      text-align: center;
+      font-family: 'comic sans ms'; /* The one true font */
+      background-color: var(--main-bg-color);
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    h1 {
+      color: rgb(248, 129, 181);
+    }
+
+    a {
+      text-decoration: none;
+      text-shadow: 0.065em 0.065em rgba(10, 2, 10, 0.316);
+    }
+    
+    a:hover {
+      text-decoration: dotted;
+    }
+
+    /* The color-mix stuff is a bit of a hack around lack of alpha blending in */
+    a:link {
+      color: color-mix(in oklab, var(--main-bg-color) 50%, rgb(104, 152, 250) 100%);
+    }
+
+    a:visited {
+      color: color-mix(in oklab, var(--main-bg-color) 100%, rgb(215, 50, 215) 55%);
+    }
+
+  </style>
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>About Cat</title>
+  </head>
+
+  <body>
+    <main><h1>im cat</h1>
 <p>hi</p>
 <h2>cat?</h2>
 <p>me</p>
 <h2>what?</h2>
 <p>i do things sometimes</p>
+<h2>why does this site look like this? my eyes hurt</h2>
+<p>it's a wip.
+address complaints <a href="mailto:/dev/null">here</a></p>
+</main>
+    <site-footer class="wqqcxinyc"><!-- site-footer.webc --><style>.wqqcxinyc p{font-size:8pt}</style>
+
+<footer>
+  <p><a href="/">catolive.net</a> was made by hand by <a href="/about/">cat</a> with <a href="https://11ty.dev/">11ty</a></p>
+</footer></site-footer>
+  
+
+</body>
+</html>
