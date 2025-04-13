@@ -1,0 +1,12 @@
+<!-- site-footer.webc -->
+<!--- using https://11ty.rocks/posts/introduction-webc/ for inspiration/docs --->
+
+<style webc:scoped webc:keep>
+  p {
+    font-size: 8pt;
+  }
+</style>
+
+<footer>
+  <p><a :href="url('/')">catolive.net</a> was made by hand by <a :href="url('/about/')">cat</a> with <a href="https://11ty.dev/">11ty</a></p>
+</footer>
