@@ -11,12 +11,13 @@
     }
 
     body {
-      text-align: center;
+      text-align: left;
       font-family: 'comic sans ms'; /* The one true font */
       background-color: var(--main-bg-color);
 
       display: flex;
       flex-direction: column;
+      margin: 5em;
     }
 
     main {
