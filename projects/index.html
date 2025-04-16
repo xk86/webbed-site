@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head><style>
+    :root {
+      --main-bg-color: rgb(174, 231, 195);
+    }
+
+    html, body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      text-align: left;
+      font-family: 'comic sans ms'; /* The one true font */
+      background-color: var(--main-bg-color);
+
+      display: flex;
+      flex-direction: column;
+      margin: 5em;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    h1 {
+      color: rgb(248, 129, 181);
+    }
+
+    a {
+      text-decoration: none;
+      text-shadow: 0.065em 0.065em rgba(10, 2, 10, 0.316);
+    }
+    
+    a:hover {
+      text-decoration: dotted;
+    }
+
+    /* The color-mix stuff is a bit of a hack around lack of alpha blending in */
+    a:link {
+      color: color-mix(in oklab, var(--main-bg-color) 50%, rgb(104, 152, 250) 100%);
+    }
+
+    a:visited {
+      color: color-mix(in oklab, var(--main-bg-color) 100%, rgb(215, 50, 215) 55%);
+    }
+
+  </style>
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cat's Projects</title>
+  </head>
+
+  <body>
+    <main><h1>some projects cat has done</h1>
+<p>like i said on my about page, i've done some things. here are some of the things i've done</p>
+<h2>pixelplant</h2>
+<p><a href="https://xk86.github.io/pixelplant/">pixelplant</a> is a really simple UI for an <a href="https://en.wikipedia.org/wiki/L-system">L-system</a> based pixel art plant maker.
+The UI is very clunky and thrown together, but it is a fully-functional, hand-written L-system plant generator.
+Future ideas are mostly focused around making the UI nicer and more intuitive, since how the rules are defined and used is currently not very user-friendly.
+Specifically, I'd like to add a "drag-and-drop" ability for making and stringing together rules, as I feel this would be much more intuitive than writing the abstract characters out as is currently done.
+It's structured to provide users with a set fixed operations they can assign with values to labeled rules.
+As such, even though it is very clunky, it is fully-featured and allows for a fairly wide range of expression.</p>
+<p>It supports a few neat (in my opinion) features:</p>
+<ul>
+<li>Probabilistic rules (rules that trigger a certain percentage of the time)</li>
+<li>Operations that let you change the color (this is how I've implemented the red flowers you see on the default plant when you load the page)</li>
+<li>Rule import/export for sharing creations</li>
+<li>Live redrawing as you update rules and components</li>
+</ul>
+<h2>Stacky (Not Released- CS50x Final Project)</h2>
+<p>An incomplete stack machine emulator that tries to emulate the abstract <a href="https://en.wikipedia.org/wiki/SECD_machine">SECD machine</a>.
+It's incomplete as it only implements the S and the C parts, effectively making it more of a calculator than a computer.
+It is written in C and features a handwritten parser, object memory management, an interactive REPL.
+Because my main motivation for doing this was to learn more about parsers and making virtual machines, there are also some features for inspecting the state of the machine.
+You can print the contents of the system's memory and see where in the stack processing is happening.</p>
+<h2>This Website</h2>
+<p>Not terribly impressive as of right now, but I'm using <a href="https://11ty.dev">11ty</a> for static site generation, and hosting on GitHub Pages.
+One idea I have for the site is to include generated plants from my pixelplant project on the bottom of the main page.</p>
+<h2>Secret Language Model Project</h2>
+<p>I am collaborating with <a href="https://madi.pizza">Madi</a> to make a GPT-style language model that runs in highly constrained environments (no accelerated operations).
+It is currently unreleased, but it <em>does</em> learn!
+We have an entire custom tensor math library that was made for this purpose, complete with a functioning autodiff engine.
+We also implement Grouped Query Attention, and have a full training pipeline that runs and learns.
+My contributions to the project have been in testing and bug fixing, as well as helping architect the project.
+I also wrote the training pipeline and tokenizer we use currently, which are both very simplified to what they will be in the public release.</p>
+</main>
+    <site-footer class="wqqcxinyc"><!-- site-footer.webc --><style>.wqqcxinyc p{font-size:8pt}</style>
+
+<footer>
+  <p><a href="/">catolive.net</a> was made by hand by <a href="/about/">cat</a> with <a href="https://11ty.dev/">11ty</a></p>
+</footer></site-footer>
+  
+
+</body>
+</html>
