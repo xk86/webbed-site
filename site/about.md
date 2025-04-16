@@ -10,7 +10,7 @@ hi
 me
 
 ## what?
-i do things sometimes
+i do [things](/projects) sometimes
 
 ## why does this site look like this? my eyes hurt
 it's a wip.
