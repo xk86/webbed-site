@@ -1,4 +1,9 @@
+---
+layout: main.webc
+title: Cat's Projects
+---
 # some projects cat has done
+like i said on my about page, i've done some things. here are some of the things i've done
 
 ## pixelplant
 [pixelplant](https://xk86.github.io/pixelplant/) is a really simple UI for an [L-system](https://en.wikipedia.org/wiki/L-system) based pixel art plant maker.
