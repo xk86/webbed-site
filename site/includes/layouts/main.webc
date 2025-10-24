@@ -3,17 +3,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title @text="title"></title>
+    <!-- theme preload -->
     <script webc:keep>
       (function () {
-        var t = localStorage.getItem('theme') || 'silly';
+        var t = localStorage.getItem('theme') || 'theme-silly';
         document.documentElement.dataset.theme = t;
       })();
     </script>
 
+    <!-- Theme stylesheets -->
     <link webc:keep rel="stylesheet" href="/pub/themes/base.css">
 
     <link webc:keep rel="stylesheet" href="/pub/themes/silly.css" id="theme-silly">
     <link webc:keep rel="stylesheet" href="/pub/themes/srs.css" id="theme-srs" disabled>
+
+    <!-- Typefaces -->
+    <link webc:keep rel="preconnect" href="https://fonts.googleapis.com">
+    <link webc:keep rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link webc:keep href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   </head>
 
   <body>

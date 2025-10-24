@@ -1,3 +1,4 @@
+<!-- theme apply function -->
 <script webc:keep>
   (function () {
     var silly = document.getElementById('theme-silly');
@@ -34,6 +35,7 @@
   }
 </style>
 
+<!-- button code -->
 <script webc:keep>
   (() => {
     const btn = document.currentScript.previousElementSibling.previousElementSibling || document.getElementById('theme-toggle');

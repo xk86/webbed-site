@@ -4,7 +4,7 @@
   --heading: rgb(248, 129, 181);
   --link: rgb(104, 152, 250);
   --link-visited: rgb(215, 50, 215);
-  --font: 'comic sans ms';
+  --heading-font: 'comic sans ms';
 }
 
 html, body {
@@ -13,14 +13,25 @@ html, body {
   margin: 0;
 }
 
+*,
+*::before,
+*::after {
+  transition:
+    color .25s ease,
+    background-color .25s ease,
+    border-color .25s ease,
+    text-shadow .25s ease;
+}
+
 body {
   text-align: left;
-  font-family: var(--font); /* The one true font */
+  font-family: var(--body-font); /* The one true font */
   background-color: var(--main-bg-color);
 
   display: flex;
   flex-direction: column;
-  margin: 5em;
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
 main {
