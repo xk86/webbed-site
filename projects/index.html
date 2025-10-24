@@ -1,58 +1,28 @@
 <!doctype html>
 <html>
-<head><style>
-    :root {
-      --main-bg-color: rgb(174, 231, 195);
-    }
-
-    html, body {
-      height: 100%;
-      padding: 0;
-      margin: 0;
-    }
-
-    body {
-      text-align: left;
-      font-family: 'comic sans ms'; /* The one true font */
-      background-color: var(--main-bg-color);
-
-      display: flex;
-      flex-direction: column;
-      margin: 5em;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    h1 {
-      color: rgb(248, 129, 181);
-    }
-
-    a {
-      text-decoration: none;
-      text-shadow: 0.065em 0.065em rgba(10, 2, 10, 0.316);
-    }
-    
-    a:hover {
-      text-decoration: dotted;
-    }
-
-    /* The color-mix stuff is a bit of a hack around lack of alpha blending in */
-    a:link {
-      color: color-mix(in oklab, var(--main-bg-color) 50%, rgb(104, 152, 250) 100%);
-    }
-
-    a:visited {
-      color: color-mix(in oklab, var(--main-bg-color) 100%, rgb(215, 50, 215) 55%);
-    }
-
-  </style>
-
-  
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Cat's Projects</title>
+    <!-- theme preload -->
+    <script>
+      (function () {
+        var t = localStorage.getItem('theme') || 'theme-silly';
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+
+    <!-- Theme stylesheets -->
+    <link rel="stylesheet" href="/pub/themes/base.css">
+
+    <link rel="stylesheet" href="/pub/themes/silly.css" id="theme-silly">
+    <link rel="stylesheet" href="/pub/themes/srs.css" id="theme-srs" disabled="">
+
+    <!-- Typefaces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -89,6 +59,59 @@ We also implement Grouped Query Attention, and have a full training pipeline tha
 My contributions to the project have been in testing and bug fixing, as well as helping architect the project.
 I also wrote the training pipeline and tokenizer we use currently, which are both very simplified to what they will be in the public release.</p>
 </main>
+    <theme-switcher><!-- theme apply function --><script>
+  (function () {
+    var silly = document.getElementById('theme-silly');
+    var srs = document.getElementById('theme-srs');
+
+    function apply(theme) {
+      var isSrs = theme === 'theme-srs';
+      if (silly) silly.disabled = isSrs;
+      if (srs) srs.disabled = !isSrs;
+      document.documentElement.dataset.theme = theme;
+      localStorage.setItem('theme', theme);
+    }
+
+  apply(document.documentElement.dataset.theme || 'theme-silly');
+
+  window.__applyTheme = apply;
+  }
+  )();
+</script>
+
+<button id="theme-toggle" type="button" aria-live="polite">
+  Switch theme
+</button>
+
+<style>
+  #theme-toggle {
+    position: fixed;
+    inset: auto 1rem 1rem auto;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    border: 1px solid currentColor;
+    background: transparent;
+    cursor: pointer;
+  }
+</style>
+
+<!-- button code -->
+<script>
+  (() => {
+    const btn = document.currentScript.previousElementSibling.previousElementSibling || document.getElementById('theme-toggle');
+    const get = () => document.documentElement.dataset.theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
+    const label = () => 'Theme: ' + (get() === 'theme-srs' ? 'Serious' : 'silly :3');
+
+    function updateLabel() { btn.textContent = label(); }
+    updateLabel();
+
+    btn.addEventListener('click', () => {
+      const next = get() === 'theme-silly' ? 'theme-srs' : 'theme-silly';
+      if (typeof window.__applyTheme === 'function') window.__applyTheme(next);
+      updateLabel();
+    });
+  })();
+</script></theme-switcher>
     <site-footer class="wqqcxinyc"><!-- site-footer.webc --><style>.wqqcxinyc p{font-size:8pt}</style>
 
 <footer>
