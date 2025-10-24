@@ -6,4 +6,6 @@
   --link: rgb(104, 152, 250);
   --link-visited: rgb(215, 50, 215);
   --font: 'comic sans ms', system-ui, sans-serif;
+  --heading-font: var(--font);
+  --body-font: var(--font);
 }

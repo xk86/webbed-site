@@ -27,8 +27,24 @@ main {
   flex: 1;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  --h-indent: 0em;
+  margin-left: var(--h-indent);
+  font-family: var(--heading-font);
+}
+
 h1 {
   color: var(--heading);
+}
+
+h2 {
+  --h-indent: 0.5em;
+  color: color-mix(in oklab, var(--main-bg-color) 25%, var(--heading) 100%);
+}
+
+:is(h1, h2, h3, h4, h5, h6) ~ :is(p, ul) {
+  margin-left: calc(var(--h-indent, 0em) + 1.7em);
+  margin-right: calc(var(--h-indent, 0em) + 1.7em);
 }
 
 a {

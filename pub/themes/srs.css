@@ -4,6 +4,17 @@
   --text: #111;
   --heading: #36492e;
   --link: #4c9ae9;
-  --link-visited: #430b92;
-  --font: 'serif';
+  --link-visited: #7700ff;
+  --heading-font: 'Playfair display', 'serif';
+  --body-font: 'Alegreya Sans', 'sans serif';
+  font-optical-sizing: auto;
+}
+
+p, li {
+  font-weight: 400;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 500;
+  text-transform: capitalize;
 }
