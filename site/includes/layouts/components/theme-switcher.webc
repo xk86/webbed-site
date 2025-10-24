@@ -1,0 +1,52 @@
+<script webc:keep>
+  (function () {
+    var silly = document.getElementById('theme-silly');
+    var srs = document.getElementById('theme-srs');
+
+    function apply(theme) {
+      var isSrs = theme === 'theme-srs';
+      if (silly) silly.disabled = isSrs;
+      if (srs) srs.disabled = !isSrs;
+      document.documentElement.dataset.theme = theme;
+      localStorage.setItem('theme', theme);
+    }
+
+  apply(document.documentElement.dataset.theme || 'theme-silly');
+
+  window.__applyTheme = apply;
+  }
+  )();
+</script>
+
+<button id="theme-toggle" type="button" aria-live="polite" webc:keep>
+  Switch theme
+</button>
+
+<style webc:keep>
+  #theme-toggle {
+    position: fixed;
+    inset: auto 1rem 1rem auto;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    border: 1px solid currentColor;
+    background: transparent;
+    cursor: pointer;
+  }
+</style>
+
+<script webc:keep>
+  (() => {
+    const btn = document.currentScript.previousElementSibling.previousElementSibling || document.getElementById('theme-toggle');
+    const get = () => document.documentElement.dataset.theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
+    const label = () => 'Theme: ' + (get() === 'theme-srs' ? 'Serious' : 'silly :3');
+
+    function updateLabel() { btn.textContent = label(); }
+    updateLabel();
+
+    btn.addEventListener('click', () => {
+      const next = get() === 'theme-silly' ? 'theme-srs' : 'theme-silly';
+      if (typeof window.__applyTheme === 'function') window.__applyTheme(next);
+      updateLabel();
+    });
+  })();
+</script>

@@ -1,62 +1,25 @@
 <!DOCTYPE html>
-  <style webc:keep>
-    :root {
-      --main-bg-color: rgb(174, 231, 195);
-    }
-
-    html, body {
-      height: 100%;
-      padding: 0;
-      margin: 0;
-    }
-
-    body {
-      text-align: left;
-      font-family: 'comic sans ms'; /* The one true font */
-      background-color: var(--main-bg-color);
-
-      display: flex;
-      flex-direction: column;
-      margin: 5em;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    h1 {
-      color: rgb(248, 129, 181);
-    }
-
-    a {
-      text-decoration: none;
-      text-shadow: 0.065em 0.065em rgba(10, 2, 10, 0.316);
-    }
-    
-    a:hover {
-      text-decoration: dotted;
-    }
-
-    /* The color-mix stuff is a bit of a hack around lack of alpha blending in */
-    a:link {
-      color: color-mix(in oklab, var(--main-bg-color) 50%, rgb(104, 152, 250) 100%);
-    }
-
-    a:visited {
-      color: color-mix(in oklab, var(--main-bg-color) 100%, rgb(215, 50, 215) 55%);
-    }
-
-  </style>
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title @text="title"></title>
+    <script webc:keep>
+      (function () {
+        var t = localStorage.getItem('theme') || 'silly';
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+
+    <link webc:keep rel="stylesheet" href="/pub/themes/base.css">
+
+    <link webc:keep rel="stylesheet" href="/pub/themes/silly.css" id="theme-silly">
+    <link webc:keep rel="stylesheet" href="/pub/themes/srs.css" id="theme-srs" disabled>
   </head>
 
   <body>
     <main @html="content">
     </main>
+    <theme-switcher></theme-switcher>
     <site-footer></site-footer>
   </body>
 

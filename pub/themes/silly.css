@@ -1,0 +1,9 @@
+/* /includes/layouts/themes/silly.css - theme for silly/cute */
+:root {
+  --main-bg-color: rgb(174, 231, 195);
+  --text: #121212;
+  --heading: rgb(248, 129, 181);
+  --link: rgb(104, 152, 250);
+  --link-visited: rgb(215, 50, 215);
+  --font: 'comic sans ms', system-ui, sans-serif;
+}

@@ -1,0 +1,50 @@
+:root {
+  --main-bg-color: rgb(174, 231, 195);
+  --text: #111;
+  --heading: rgb(248, 129, 181);
+  --link: rgb(104, 152, 250);
+  --link-visited: rgb(215, 50, 215);
+  --font: 'comic sans ms';
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  text-align: left;
+  font-family: var(--font); /* The one true font */
+  background-color: var(--main-bg-color);
+
+  display: flex;
+  flex-direction: column;
+  margin: 5em;
+}
+
+main {
+  flex: 1;
+}
+
+h1 {
+  color: var(--heading);
+}
+
+a {
+  text-decoration: none;
+  text-shadow: 0.065em 0.065em rgba(10, 2, 10, 0.316);
+}
+
+a:hover {
+  text-decoration: dotted;
+}
+
+/* The color-mix stuff is a bit of a hack around lack of alpha blending for links */
+a:link {
+  color: color-mix(in oklab, var(--main-bg-color) 50%, var(--link) 100%);
+}
+
+a:visited {
+  color: color-mix(in oklab, var(--main-bg-color) 100%, var(--link-visited) 55%);
+}
