@@ -4,14 +4,20 @@ title: About Cat
 ---
 
 # im cat
+
 hi
 
 ## cat?
+
 me
 
 ## what?
+
 i do [things](/projects) sometimes
 
 ## why does this site look like this? my eyes hurt
+
 it's a wip.
 address complaints [here](mailto:/dev/null)
+
+you can also change the theme with the floating button in the bottom right.
