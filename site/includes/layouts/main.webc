@@ -14,7 +14,7 @@
     <!-- Theme stylesheets -->
     <link webc:keep rel="stylesheet" href="/pub/themes/base.css">
 
-    <link webc:keep rel="stylesheet" href="/pub/themes/silly.css" id="theme-silly">
+    <link webc:keep rel="stylesheet" href="/pub/themes/silly.css" id="theme-silly" disabled>
     <link webc:keep rel="stylesheet" href="/pub/themes/srs.css" id="theme-srs" disabled>
 
     <!-- Typefaces -->

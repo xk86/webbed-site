@@ -14,6 +14,9 @@ const colors = {
   "blue" : "0000ff",
 }
 
+
+const themeNames = ['theme-silly', 'theme-srs'];
+
 export default function (eleventyConfig) {
   // Pass thru our pub dir (has to be done before input dir)
   eleventyConfig.addPassthroughCopy("pub");
@@ -28,6 +31,7 @@ export default function (eleventyConfig) {
     }
   });
 
+  eleventyConfig.addGlobalData("themeNames", themeNames);
   eleventyConfig.addWatchTarget("./pub/");
 
   /* Plugins Config */

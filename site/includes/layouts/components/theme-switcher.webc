@@ -4,6 +4,19 @@
     var silly = document.getElementById('theme-silly');
     var srs = document.getElementById('theme-srs');
 
+    const tNs = { themeNames };
+    console.log(tNs);
+
+
+    var themes = ((names) => {
+      let ts = []
+      names.forEach(t => {
+        console.log(t);
+        ts = ts.concat(document.getElementById(t));
+      });
+      return ts;
+    })()
+
     function apply(theme) {
       var isSrs = theme === 'theme-srs';
       if (silly) silly.disabled = isSrs;
@@ -39,6 +52,7 @@
 <script webc:keep>
   (() => {
     const btn = document.currentScript.previousElementSibling.previousElementSibling || document.getElementById('theme-toggle');
+    const themes = ['theme-srs', 'theme-silly']
     const get = () => document.documentElement.dataset.theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
     const label = () => 'Theme: ' + (get() === 'theme-srs' ? 'Serious' : 'silly :3');
 
