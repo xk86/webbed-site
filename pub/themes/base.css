@@ -1,10 +1,25 @@
+.silly-only,
+.srs-only {
+  display: none;
+}
+
+html:not([data-theme]) .silly-only,
+html[data-theme="theme-silly"] .silly-only {
+  display: block;
+}
+
+html[data-theme="theme-srs"] .srs-only {
+  display: block;
+}
+
 :root {
   --main-bg-color: rgb(174, 231, 195);
   --text: #111;
   --heading: rgb(248, 129, 181);
   --link: rgb(104, 152, 250);
   --link-visited: rgb(215, 50, 215);
-  --heading-font: 'comic sans ms';
+  --heading-font: 'comic sans ms', system-ui, sans-serif;
+  --body-font: 'comic sans ms', system-ui, sans-serif;
 }
 
 html, body {
