@@ -4,19 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>About Cat</title>
-    <!-- theme preload -->
+
+    <!-- Theme bootstrap: set desired theme before styles resolve -->
     <script>
       (function () {
-        var t = localStorage.getItem('theme') || 'theme-silly';
-        document.documentElement.dataset.theme = t;
+        var stored;
+        try {
+          stored = localStorage.getItem('theme');
+        } catch (e) {
+          stored = null;
+        }
+
+        var theme = stored === 'theme-srs' ? 'theme-srs' : 'theme-silly';
+        document.documentElement.dataset.theme = theme;
       })();
     </script>
 
     <!-- Theme stylesheets -->
     <link rel="stylesheet" href="/pub/themes/base.css">
+    <link rel="stylesheet" href="/pub/themes/silly.css">
+    <link rel="stylesheet" href="/pub/themes/srs.css">
 
-    <link rel="stylesheet" href="/pub/themes/silly.css" id="theme-silly">
-    <link rel="stylesheet" href="/pub/themes/srs.css" id="theme-srs" disabled="">
+    <!-- Theme apply function, defined in head to avoid first-load flicker -->
+    <script>
+      (function () {
+        function normalize(theme) {
+          return theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
+        }
+
+        function apply(theme) {
+          var next = normalize(theme);
+          document.documentElement.dataset.theme = next;
+
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {
+            // Ignore storage errors in restricted contexts.
+          }
+        }
+
+        apply(document.documentElement.dataset.theme);
+        window.__applyTheme = apply;
+      })();
+    </script>
 
     <!-- Typefaces -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,38 +56,27 @@
   </head>
 
   <body>
-    <main><h1>im cat</h1>
+    <main><div class="silly-only">
+<h1>im cat</h1>
 <p>hi</p>
 <h2>cat?</h2>
 <p>me</p>
 <h2>what?</h2>
 <p>i do <a href="/projects">things</a> sometimes</p>
 <h2>why does this site look like this? my eyes hurt</h2>
-<p>it's a wip.
+<p>because graphic design is my passion!! &lt;3
 address complaints <a href="mailto:/dev/null">here</a></p>
 <p>you can also change the theme with the floating button in the bottom right.</p>
+</div>
+<div class="srs-only">
+<h1>I'm Cat</h1>
+<p>I am a tech generalist and dork-of-all-trades. You can catch me playing around with language models, vibe coding some horrific monstrosity, or just relaxing and playing video games.
+I live in the San Francisco Bay Area. I also love coffee!</p>
+<h2>Projects</h2>
+<p>I've worked on a few <a href="/projects">things</a> over the years. Take a look!</p>
+</div>
 </main>
-    <theme-switcher><!-- theme apply function --><script>
-  (function () {
-    var silly = document.getElementById('theme-silly');
-    var srs = document.getElementById('theme-srs');
-
-    function apply(theme) {
-      var isSrs = theme === 'theme-srs';
-      if (silly) silly.disabled = isSrs;
-      if (srs) srs.disabled = !isSrs;
-      document.documentElement.dataset.theme = theme;
-      localStorage.setItem('theme', theme);
-    }
-
-  apply(document.documentElement.dataset.theme || 'theme-silly');
-
-  window.__applyTheme = apply;
-  }
-  )();
-</script>
-
-<button id="theme-toggle" type="button" aria-live="polite">
+    <theme-switcher><button id="theme-toggle" type="button" aria-live="polite">
   Switch theme
 </button>
 
@@ -73,29 +92,41 @@ address complaints <a href="mailto:/dev/null">here</a></p>
   }
 </style>
 
-<!-- button code -->
 <script>
   (() => {
-    const btn = document.currentScript.previousElementSibling.previousElementSibling || document.getElementById('theme-toggle');
-    const get = () => document.documentElement.dataset.theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
-    const label = () => 'Theme: ' + (get() === 'theme-srs' ? 'Serious' : 'silly :3');
+    const btn = document.getElementById('theme-toggle');
 
-    function updateLabel() { btn.textContent = label(); }
+    const getTheme = () =>
+      document.documentElement.dataset.theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
+
+    const label = () =>
+      'Theme: ' + (getTheme() === 'theme-srs' ? 'Serious' : 'silly :3');
+
+    function updateLabel() {
+      if (btn) btn.textContent = label();
+    }
+
     updateLabel();
 
-    btn.addEventListener('click', () => {
-      const next = get() === 'theme-silly' ? 'theme-srs' : 'theme-silly';
-      if (typeof window.__applyTheme === 'function') window.__applyTheme(next);
-      updateLabel();
-    });
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const next = getTheme() === 'theme-silly' ? 'theme-srs' : 'theme-silly';
+        if (typeof window.__applyTheme === 'function') {
+          window.__applyTheme(next);
+        }
+        updateLabel();
+      });
+    }
   })();
-</script></theme-switcher>
+</script>
+</theme-switcher>
     <site-footer class="wqqcxinyc"><!-- site-footer.webc --><style>.wqqcxinyc p{font-size:8pt}</style>
 
 <footer>
   <p><a href="/">catolive.net</a> was made by hand by <a href="/about/">cat</a> with <a href="https://11ty.dev/">11ty</a></p>
 </footer></site-footer>
   
+
 
 </body>
 </html>
