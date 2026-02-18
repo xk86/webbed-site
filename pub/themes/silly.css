@@ -1,5 +1,5 @@
 /* /includes/layouts/themes/silly.css - theme for silly/cute */
-:root {
+html[data-theme='theme-silly'] {
   --main-bg-color: rgb(174, 231, 195);
   --text: #121212;
   --heading: rgb(248, 129, 181);

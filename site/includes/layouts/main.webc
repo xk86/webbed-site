@@ -21,23 +21,18 @@
 
     <!-- Theme stylesheets -->
     <link webc:keep rel="stylesheet" href="/pub/themes/base.css">
-    <link webc:keep rel="stylesheet" href="/pub/themes/silly.css" id="theme-silly" disabled>
-    <link webc:keep rel="stylesheet" href="/pub/themes/srs.css" id="theme-srs" disabled>
+    <link webc:keep rel="stylesheet" href="/pub/themes/silly.css">
+    <link webc:keep rel="stylesheet" href="/pub/themes/srs.css">
 
     <!-- Theme apply function, defined in head to avoid first-load flicker -->
     <script webc:keep>
       (function () {
-        var silly = document.getElementById('theme-silly');
-        var srs = document.getElementById('theme-srs');
-
         function normalize(theme) {
           return theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
         }
 
         function apply(theme) {
           var next = normalize(theme);
-          if (silly) silly.disabled = next !== 'theme-silly';
-          if (srs) srs.disabled = next !== 'theme-srs';
           document.documentElement.dataset.theme = next;
 
           try {

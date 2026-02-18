@@ -1,5 +1,5 @@
 /* /includes/layouts/themes/srs.css - theme for serious text */
-:root {
+html[data-theme='theme-srs'] {
   --main-bg-color: #e6e6e6;
   --text: #111;
   --heading: #130c05;
@@ -10,11 +10,17 @@
   font-optical-sizing: auto;
 }
 
-p, li {
+html[data-theme='theme-srs'] p,
+html[data-theme='theme-srs'] li {
   font-weight: 400;
 }
 
-h1,h2,h3,h4,h5,h6 {
+html[data-theme='theme-srs'] h1,
+html[data-theme='theme-srs'] h2,
+html[data-theme='theme-srs'] h3,
+html[data-theme='theme-srs'] h4,
+html[data-theme='theme-srs'] h5,
+html[data-theme='theme-srs'] h6 {
   font-weight: 500;
   text-transform: capitalize;
 }
