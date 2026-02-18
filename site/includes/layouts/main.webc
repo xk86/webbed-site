@@ -3,19 +3,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title @text="title"></title>
-    <!-- theme preload -->
+
+    <!-- Theme bootstrap: set desired theme before styles resolve -->
     <script webc:keep>
       (function () {
-        var t = localStorage.getItem('theme') || 'theme-silly';
-        document.documentElement.dataset.theme = t;
+        var stored;
+        try {
+          stored = localStorage.getItem('theme');
+        } catch (e) {
+          stored = null;
+        }
+
+        var theme = stored === 'theme-srs' ? 'theme-srs' : 'theme-silly';
+        document.documentElement.dataset.theme = theme;
       })();
     </script>
 
     <!-- Theme stylesheets -->
     <link webc:keep rel="stylesheet" href="/pub/themes/base.css">
-
     <link webc:keep rel="stylesheet" href="/pub/themes/silly.css" id="theme-silly" disabled>
     <link webc:keep rel="stylesheet" href="/pub/themes/srs.css" id="theme-srs" disabled>
+
+    <!-- Theme apply function, defined in head to avoid first-load flicker -->
+    <script webc:keep>
+      (function () {
+        var silly = document.getElementById('theme-silly');
+        var srs = document.getElementById('theme-srs');
+
+        function normalize(theme) {
+          return theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
+        }
+
+        function apply(theme) {
+          var next = normalize(theme);
+          if (silly) silly.disabled = next !== 'theme-silly';
+          if (srs) srs.disabled = next !== 'theme-srs';
+          document.documentElement.dataset.theme = next;
+
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {
+            // Ignore storage errors in restricted contexts.
+          }
+        }
+
+        apply(document.documentElement.dataset.theme);
+        window.__applyTheme = apply;
+      })();
+    </script>
 
     <!-- Typefaces -->
     <link webc:keep rel="preconnect" href="https://fonts.googleapis.com">

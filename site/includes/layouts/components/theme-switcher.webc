@@ -1,37 +1,3 @@
-<!-- theme apply function -->
-<script webc:keep>
-  (function () {
-    var silly = document.getElementById('theme-silly');
-    var srs = document.getElementById('theme-srs');
-
-    const tNs = { themeNames };
-    console.log(tNs);
-
-
-    var themes = ((names) => {
-      let ts = []
-      names.forEach(t => {
-        console.log(t);
-        ts = ts.concat(document.getElementById(t));
-      });
-      return ts;
-    })()
-
-    function apply(theme) {
-      var isSrs = theme === 'theme-srs';
-      if (silly) silly.disabled = isSrs;
-      if (srs) srs.disabled = !isSrs;
-      document.documentElement.dataset.theme = theme;
-      localStorage.setItem('theme', theme);
-    }
-
-  apply(document.documentElement.dataset.theme || 'theme-silly');
-
-  window.__applyTheme = apply;
-  }
-  )();
-</script>
-
 <button id="theme-toggle" type="button" aria-live="polite" webc:keep>
   Switch theme
 </button>
@@ -48,21 +14,30 @@
   }
 </style>
 
-<!-- button code -->
 <script webc:keep>
   (() => {
-    const btn = document.currentScript.previousElementSibling.previousElementSibling || document.getElementById('theme-toggle');
-    const themes = ['theme-srs', 'theme-silly']
-    const get = () => document.documentElement.dataset.theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
-    const label = () => 'Theme: ' + (get() === 'theme-srs' ? 'Serious' : 'silly :3');
+    const btn = document.getElementById('theme-toggle');
 
-    function updateLabel() { btn.textContent = label(); }
+    const getTheme = () =>
+      document.documentElement.dataset.theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
+
+    const label = () =>
+      'Theme: ' + (getTheme() === 'theme-srs' ? 'Serious' : 'silly :3');
+
+    function updateLabel() {
+      if (btn) btn.textContent = label();
+    }
+
     updateLabel();
 
-    btn.addEventListener('click', () => {
-      const next = get() === 'theme-silly' ? 'theme-srs' : 'theme-silly';
-      if (typeof window.__applyTheme === 'function') window.__applyTheme(next);
-      updateLabel();
-    });
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const next = getTheme() === 'theme-silly' ? 'theme-srs' : 'theme-silly';
+        if (typeof window.__applyTheme === 'function') {
+          window.__applyTheme(next);
+        }
+        updateLabel();
+      });
+    }
   })();
 </script>
