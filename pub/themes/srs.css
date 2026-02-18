@@ -3,8 +3,8 @@ html[data-theme='theme-srs'] {
   --main-bg-color: #e6e6e6;
   --text: #111;
   --heading: #130c05;
-  --link: #4c9ae9;
-  --link-visited: #7700ff;
+  --link: #0257ac;
+  --link-visited: #541d92;
   --heading-font: 'Playfair display', 'serif';
   --body-font: 'Alegreya Sans', 'sans serif';
   font-optical-sizing: auto;
@@ -23,4 +23,21 @@ html[data-theme='theme-srs'] h5,
 html[data-theme='theme-srs'] h6 {
   font-weight: 500;
   text-transform: capitalize;
+}
+
+
+html[data-theme='theme-srs'] a {
+  text-decoration: none;
+  text-shadow: none;
+}
+
+
+
+html[data-theme='theme-srs'] a:link {
+  color: var(--link);
+}
+
+
+html[data-theme='theme-srs'] a:visited {
+  color: var(--link-visited);
 }
