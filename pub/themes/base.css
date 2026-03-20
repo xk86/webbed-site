@@ -2,7 +2,6 @@
 @import url("./components/buttons.css");
 @import url("./components/navbar.css");
 @import url("./components/footer.css");
-@import url("./components/theme-toggle.css");
 
 .silly-only,
 .srs-only {
@@ -24,6 +23,7 @@ html[data-theme="theme-srs"] .srs-only {
   --heading: rgb(248, 129, 181);
   --link: rgb(104, 152, 250);
   --link-visited: rgb(215, 50, 215);
+  --accent: rgb(156 228 248);
   --heading-font: 'comic sans ms', system-ui, sans-serif;
   --body-font: 'comic sans ms', system-ui, sans-serif;
 }
@@ -73,5 +73,5 @@ a:link {
 }
 
 a:visited {
-  color: color-mix(in oklab, var(--main-bg-color) 100%, var(--link-visited) 55%);
+  color: color-mix(in oklab, var(--main-bg-color) 100%, var(--link-visited) 100%);
 }

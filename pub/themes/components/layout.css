@@ -3,19 +3,16 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-}
-
-body {
   text-align: left;
   font-family: var(--body-font); /* The one true font */
   background-color: var(--main-bg-color);
   display: flex;
   flex-direction: column;
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }
-
 main {
   flex: 1;
   padding: 1.25rem;
+  margin-right: 20%;
 }

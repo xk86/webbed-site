@@ -4,6 +4,8 @@ html[data-theme='theme-srs'] {
   --text: #111;
   --heading: #130c05;
   --link: #0257ac;
+  --accent: rgb(69, 114, 123);
+  --accent-bg: rgb(129, 129, 129);
   --link-visited: #541d92;
   --heading-font: 'Playfair display', 'serif';
   --body-font: 'Alegreya Sans', 'sans serif';
