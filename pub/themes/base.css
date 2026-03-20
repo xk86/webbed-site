@@ -90,29 +90,3 @@ a:link {
 a:visited {
   color: color-mix(in oklab, var(--main-bg-color) 100%, var(--link-visited) 55%);
 }
-
-button,
-.site-nav a {
-  display: inline-block;
-  padding: .5rem .75rem;
-  border: 1px solid currentColor;
-  border-radius: .5rem;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-
-.site-nav a {
-  border-radius: 999px;
-}
-
-.site-nav a[aria-current="page"] {
-  font-weight: 700;
-  text-decoration: underline;
-}
-
-#theme-toggle {
-  position: fixed;
-  inset: auto 1rem 1rem auto;
-}

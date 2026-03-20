@@ -32,6 +32,7 @@
 
     <!-- Theme stylesheets -->
     <link webc:keep rel="stylesheet" href="/pub/themes/base.css">
+    <link webc:keep rel="stylesheet" href="/pub/themes/components/buttons.css">
     <link webc:keep rel="stylesheet" href="/pub/themes/silly.css">
     <link webc:keep rel="stylesheet" href="/pub/themes/srs.css">
 
