@@ -2,18 +2,6 @@
   Switch theme
 </button>
 
-<style webc:keep>
-  #theme-toggle {
-    position: fixed;
-    inset: auto 1rem 1rem auto;
-    padding: .5rem .75rem;
-    border-radius: .5rem;
-    border: 1px solid currentColor;
-    background: transparent;
-    cursor: pointer;
-  }
-</style>
-
 <script webc:keep>
   (() => {
     const btn = document.getElementById('theme-toggle');

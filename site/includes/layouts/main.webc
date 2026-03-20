@@ -1,8 +1,19 @@
 <!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title @text="title"></title>
+
+    <style webc:keep>
+      body {
+        margin: 0;
+      }
+
+      main {
+        padding: 1.25rem;
+      }
+    </style>
 
     <!-- Theme bootstrap: set desired theme before styles resolve -->
     <script webc:keep>
@@ -55,6 +66,7 @@
   </head>
 
   <body>
+    <site-navbar></site-navbar>
     <main @html="this.content">
     </main>
     <theme-switcher></theme-switcher>
