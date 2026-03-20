@@ -1,19 +1,11 @@
 import "tsx/esm";
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import {renderToStaticMarkup} from 'react-dom/server';
 import {register} from 'node:module';
 
 register('@mdx-js/node-loader', import.meta.url);
-
-// Thus unused
-const colors = {
-  "green" : "#00ff00",
-  "red" : "ff0000",
-  "pink" : "ff00ff",
-  "blue" : "0000ff",
-}
-
 
 const themeNames = ['theme-silly', 'theme-srs'];
 
@@ -35,10 +27,16 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./pub/");
 
   /* Plugins Config */
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
   // WebC
   eleventyConfig.addPlugin(pluginWebc, {
     components: "site/includes/layouts/components/*.webc"
-  })
+  });
+
+  eleventyConfig.addCollection("primaryNav", (collectionApi) => {
+    return eleventyNavigationPlugin.navigation.find(collectionApi.getAll());
+  });
 
   // Adds syntax highlighting
   eleventyConfig.addPlugin(syntaxHighlight, {

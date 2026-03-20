@@ -1,6 +1,9 @@
 ---
 layout: main.webc
 title: Cat's Projects
+eleventyNavigation:
+  key: Projects
+  order: 3
 ---
 
 # some projects cat has done

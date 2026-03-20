@@ -1,6 +1,9 @@
 ---
 layout: main.webc
 title: About Cat
+eleventyNavigation:
+  key: About
+  order: 2
 ---
 
 <div class="silly-only">
