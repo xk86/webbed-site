@@ -5,6 +5,7 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.25rem 0;
+    box-shadow: 0.25em 0.25em blue;
   }
 
   .site-title {
