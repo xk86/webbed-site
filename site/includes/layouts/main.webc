@@ -55,7 +55,7 @@
   </head>
 
   <body>
-    <main @html="content">
+    <main @html="this.content">
     </main>
     <theme-switcher></theme-switcher>
     <site-footer></site-footer>

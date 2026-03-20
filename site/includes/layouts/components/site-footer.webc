@@ -8,5 +8,5 @@
 </style>
 
 <footer>
-  <p><a :href="url('/')">catolive.net</a> was made by hand by <a :href="url('/about/')">cat</a> with <a href="https://11ty.dev/">11ty</a></p>
+  <p><a href="/">catolive.net</a> was made by hand by <a href="/about/">cat</a> with <a href="https://11ty.dev/">11ty</a></p>
 </footer>
