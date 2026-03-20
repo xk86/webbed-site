@@ -5,16 +5,6 @@
     <meta name="viewport" content="width=device-width" />
     <title @text="title"></title>
 
-    <style webc:keep>
-      body {
-        margin: 0;
-      }
-
-      main {
-        padding: 1.25rem;
-      }
-    </style>
-
     <!-- Theme bootstrap: set desired theme before styles resolve -->
     <script webc:keep>
       (function () {
@@ -32,7 +22,6 @@
 
     <!-- Theme stylesheets -->
     <link webc:keep rel="stylesheet" href="/pub/themes/base.css">
-    <link webc:keep rel="stylesheet" href="/pub/themes/components/buttons.css">
     <link webc:keep rel="stylesheet" href="/pub/themes/silly.css">
     <link webc:keep rel="stylesheet" href="/pub/themes/srs.css">
 
