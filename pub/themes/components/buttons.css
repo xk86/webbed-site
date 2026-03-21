@@ -1,4 +1,5 @@
-.buttonish {
+.buttonish,
+.site-nav a {
   display: inline-block;
   padding: .15rem .75rem;
   border: 0.1rem solid currentColor;
@@ -11,7 +12,8 @@
   text-decoration: none;
 }
 
-.buttonish[aria-current="page"] {
+.buttonish[aria-current="page"],
+.site-nav a[aria-current="page"] {
   font-weight: 700;
   text-decoration: underline;
 }

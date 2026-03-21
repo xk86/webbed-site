@@ -7,6 +7,8 @@ html[data-theme='theme-srs'] {
   --accent: rgb(69, 114, 123);
   --accent-bg: rgb(129, 129, 129);
   --link-visited: #541d92;
+  --nav-link: #14353c;
+  --nav-link-active: #14353c;
   --heading-font: 'Playfair display', 'serif';
   --body-font: 'Alegreya Sans', 'sans serif';
   font-optical-sizing: auto;
@@ -42,4 +44,14 @@ html[data-theme='theme-srs'] a:link {
 
 html[data-theme='theme-srs'] a:visited {
   color: var(--link-visited);
+}
+
+html[data-theme='theme-srs'] .site-nav a:link,
+html[data-theme='theme-srs'] .site-nav a:visited,
+html[data-theme='theme-srs'] .site-nav a[aria-current="page"] {
+  color: var(--nav-link);
+}
+
+html[data-theme='theme-srs'] .site-nav a[aria-current="page"] {
+  color: var(--nav-link-active);
 }

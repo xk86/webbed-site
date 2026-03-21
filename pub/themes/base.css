@@ -23,6 +23,8 @@ html[data-theme="theme-srs"] .srs-only {
   --heading: rgb(248, 129, 181);
   --link: rgb(104, 152, 250);
   --link-visited: rgb(215, 50, 215);
+  --nav-link: rgb(104, 152, 250);
+  --nav-link-active: rgb(215, 50, 215);
   --accent: rgb(156 228 248);
   --heading-font: 'comic sans ms', system-ui, sans-serif;
   --body-font: 'comic sans ms', system-ui, sans-serif;
@@ -66,8 +68,16 @@ a {
 a:hover {
   text-decoration: dotted;
 }
+a:link {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
 
 /* The color-mix stuff is a bit of a hack around lack of alpha blending for links */
+/*
 a:link {
   color: color-mix(in oklab, var(--main-bg-color) 50%, var(--link) 100%);
 }
@@ -75,3 +85,4 @@ a:link {
 a:visited {
   color: color-mix(in oklab, var(--main-bg-color) 100%, var(--link-visited) 100%);
 }
+  */
