@@ -3,9 +3,26 @@ html[data-theme='theme-silly'] {
   --main-bg-color: rgb(174, 231, 195);
   --text: #121212;
   --heading: rgb(248, 129, 181);
-  --link: rgb(71, 132, 255);
-  --link-visited: rgb(149, 10, 241);
+  --heading: rgb(255 195 207);
+  --accent: rgb(156 228 248);
+  --link: rgb(175 221 255);
+  --link-visited: rgb(228 203 255); 
+  --nav-link: rgb(202 211 255);
+  --nav-link-active: rgb(255 198 180);
   --font: 'comic sans ms', system-ui, sans-serif;
   --heading-font: var(--font);
   --body-font: var(--font);
+  text-shadow: 0.025em 0.025em rgba(10, 2, 10, 0.616);
+}
+
+html[data-theme='theme-silly'] h1,
+html[data-theme='theme-silly'] h2,
+html[data-theme='theme-silly'] h3,
+html[data-theme='theme-silly'] h4,
+html[data-theme='theme-silly'] h5,
+html[data-theme='theme-silly'] h6 {
+  padding: 0.1rem 0.75rem;
+  border: 0.5rem ridge #00725d;
+  border-inline-style: dotted;
+  border-radius: 2rem;
 }

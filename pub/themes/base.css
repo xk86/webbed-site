@@ -1,3 +1,8 @@
+@import url("./components/layout.css");
+@import url("./components/buttons.css");
+@import url("./components/navbar.css");
+@import url("./components/footer.css");
+
 .silly-only,
 .srs-only {
   display: none;
@@ -18,14 +23,11 @@ html[data-theme="theme-srs"] .srs-only {
   --heading: rgb(248, 129, 181);
   --link: rgb(104, 152, 250);
   --link-visited: rgb(215, 50, 215);
+  --nav-link: rgb(104, 152, 250);
+  --nav-link-active: rgb(215, 50, 215);
+  --accent: rgb(156 228 248);
   --heading-font: 'comic sans ms', system-ui, sans-serif;
   --body-font: 'comic sans ms', system-ui, sans-serif;
-}
-
-html, body {
-  height: 100%;
-  padding: 0;
-  margin: 0;
 }
 
 *,
@@ -36,21 +38,6 @@ html, body {
     background-color .25s ease,
     border-color .25s ease,
     text-shadow .25s ease;
-}
-
-body {
-  text-align: left;
-  font-family: var(--body-font); /* The one true font */
-  background-color: var(--main-bg-color);
-
-  display: flex;
-  flex-direction: column;
-  margin-left: 5em;
-  margin-right: 5em;
-}
-
-main {
-  flex: 1;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -81,12 +68,21 @@ a {
 a:hover {
   text-decoration: dotted;
 }
+a:link {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
 
 /* The color-mix stuff is a bit of a hack around lack of alpha blending for links */
+/*
 a:link {
   color: color-mix(in oklab, var(--main-bg-color) 50%, var(--link) 100%);
 }
 
 a:visited {
-  color: color-mix(in oklab, var(--main-bg-color) 100%, var(--link-visited) 55%);
+  color: color-mix(in oklab, var(--main-bg-color) 100%, var(--link-visited) 100%);
 }
+  */

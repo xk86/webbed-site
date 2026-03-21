@@ -1,9 +1,7 @@
-<!doctype html>
-<html>
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>About Cat</title>
+    <title></title>
 
     <!-- Theme bootstrap: set desired theme before styles resolve -->
     <script>
@@ -53,9 +51,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet">
-  </head>
+  
 
-  <body>
+  
+    <header class="site-header">
+  <a class="site-title" href="/">Cat Olive Webbed Site</a>
+  <nav class="site-nav" aria-label="Primary">
+    <ul><li><a href="/">Home</a></li><li><a href="/about/" aria-current="page">About</a></li><li><a href="/projects/">Projects</a></li></ul>
+  </nav>
+</header>
+
     <main><div class="silly-only">
 <h1>im cat</h1>
 <p>hi</p>
@@ -76,21 +81,9 @@ I live in the San Francisco Bay Area. I also love coffee!</p>
 <p>I've worked on a few <a href="/projects">things</a> over the years. Take a look!</p>
 </div>
 </main>
-    <theme-switcher><button id="theme-toggle" type="button" aria-live="polite">
+    <theme-switcher><button class="buttonish" id="theme-toggle" type="button" aria-live="polite">
   Switch theme
 </button>
-
-<style>
-  #theme-toggle {
-    position: fixed;
-    inset: auto 1rem 1rem auto;
-    padding: .5rem .75rem;
-    border-radius: .5rem;
-    border: 1px solid currentColor;
-    background: transparent;
-    cursor: pointer;
-  }
-</style>
 
 <script>
   (() => {
@@ -120,13 +113,10 @@ I live in the San Francisco Bay Area. I also love coffee!</p>
   })();
 </script>
 </theme-switcher>
-    <site-footer class="wqqcxinyc"><!-- site-footer.webc --><style>.wqqcxinyc p{font-size:8pt}</style>
+    <!-- site-footer.webc --><!--- using https://11ty.rocks/posts/introduction-webc/ for inspiration/docs ---><footer>
+  <p><a href="/">catolive.net</a> was made by <a href="/about/">cat</a> with <a href="https://11ty.dev/">11ty</a> in 2025 and 2026.</p>
+</footer>
 
-<footer>
-  <p><a href="/">catolive.net</a> was made by hand by <a href="/about/">cat</a> with <a href="https://11ty.dev/">11ty</a></p>
-</footer></site-footer>
   
 
 
-</body>
-</html>

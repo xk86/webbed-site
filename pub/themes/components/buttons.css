@@ -1,0 +1,24 @@
+.buttonish,
+.site-nav a {
+  display: inline-block;
+  padding: .15rem .75rem;
+  border: 0.1rem solid currentColor;
+  border-radius: 5px;
+  background: var(--accent-bg);
+  margin: 0.5rem 0.2rem;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.buttonish[aria-current="page"],
+.site-nav a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+#theme-toggle {
+  position: fixed;
+  inset: auto 1rem 1rem auto;
+}
