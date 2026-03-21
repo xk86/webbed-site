@@ -12,5 +12,17 @@ html[data-theme='theme-silly'] {
   --font: 'comic sans ms', system-ui, sans-serif;
   --heading-font: var(--font);
   --body-font: var(--font);
-  text-shadow: 0.025em 0.025em rgba(10, 2, 10, 0.316);
+  text-shadow: 0.025em 0.025em rgba(10, 2, 10, 0.616);
+}
+
+html[data-theme='theme-silly'] h1,
+html[data-theme='theme-silly'] h2,
+html[data-theme='theme-silly'] h3,
+html[data-theme='theme-silly'] h4,
+html[data-theme='theme-silly'] h5,
+html[data-theme='theme-silly'] h6 {
+  padding: 0.1rem 0.75rem;
+  border: 0.5rem ridge #00725d;
+  border-inline-style: dotted;
+  border-radius: 2rem;
 }

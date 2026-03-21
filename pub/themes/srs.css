@@ -4,11 +4,11 @@ html[data-theme='theme-srs'] {
   --text: #111;
   --heading: #130c05;
   --link: #0257ac;
-  --accent: rgb(69, 114, 123);
-  --accent-bg: rgb(129, 129, 129);
-  --link-visited: #541d92;
-  --nav-link: #14353c;
-  --nav-link-active: #14353c;
+  --accent: #007074;
+  --accent-bg: rgba(198, 198, 198, 128);
+  --link-visited: #5446aa;
+  --nav-link: #912b6c;
+  --nav-link-active: #863081;
   --heading-font: 'Playfair display', 'serif';
   --body-font: 'Alegreya Sans', 'sans serif';
   font-optical-sizing: auto;
@@ -27,6 +27,8 @@ html[data-theme='theme-srs'] h5,
 html[data-theme='theme-srs'] h6 {
   font-weight: 500;
   text-transform: capitalize;
+  padding: 0 0.75rem;
+  border-bottom: 0.5rem dotted var(--accent);
 }
 
 
