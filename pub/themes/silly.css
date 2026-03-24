@@ -22,7 +22,6 @@ html[data-theme='theme-silly'] h4,
 html[data-theme='theme-silly'] h5,
 html[data-theme='theme-silly'] h6 {
   padding: 0.1rem 0.75rem;
-  border: 0.5rem ridge #00725d;
-  border-inline-style: dotted;
-  border-radius: 2rem;
+  border-bottom: 0.5rem ridge green;
+  border-radius: 0.2rem;
 }
