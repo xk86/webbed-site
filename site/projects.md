@@ -28,7 +28,7 @@ It supports a few neat (in my opinion) features:
 
 ## Angl
 
-I'm working with my friend [Koii](https://www.koiib.com/) to help people share analogue memories with [Angl](https://myangl.com) Pop-up Picture Frame Greeting Cards!
+I'm working with my friend [Koii](https://www.koiib.com/) to help people share analog memories with [Angl](https://myangl.com) Pop-up Picture Frame Greeting Cards!
 I'm handling operations and other support for Koii as a co-founder, helping move forward projects and grow our revenue.
 
 ## Stacky (Not Released- CS50x Final Project)
@@ -46,7 +46,7 @@ One idea I have for the site is to include generated plants from my pixelplant p
 
 ## Secret Language Model Project
 
-I am collaborating with [Madi](https://madi.pizza) to make a GPT-style language model that runs in highly constrained environments (no accelerated operations).
+I collaborated with [Madi](https://madi.pizza) to make a GPT-style language model that runs in highly constrained environments (no accelerated operations).
 It is currently unreleased, but it _does_ learn!
 We have an entire custom tensor math library that was made for this purpose, complete with a functioning autodiff engine.
 We also implement Grouped Query Attention, and have a full training pipeline that runs and learns.
