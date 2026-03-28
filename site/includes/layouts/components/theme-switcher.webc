@@ -1,4 +1,12 @@
-<button class="buttonish" id="theme-toggle" type="button" aria-live="polite" webc:keep>
+<button
+  class="buttonish"
+  id="theme-toggle"
+  type="button"
+  aria-live="polite"
+  aria-pressed="false"
+  aria-label="Toggle site theme"
+  webc:keep
+>
   Switch theme
 </button>
 
@@ -12,10 +20,15 @@
     const label = () =>
       'Theme: ' + (getTheme() === 'theme-srs' ? 'Serious' : 'silly :3');
 
+    function updatePressed() {
+      if (btn) btn.setAttribute('aria-pressed', String(getTheme() === 'theme-srs'));
+    }
+
     function updateLabel() {
       if (btn) btn.textContent = label();
     }
 
+    updatePressed();
     updateLabel();
 
     if (btn) {
@@ -24,6 +37,7 @@
         if (typeof window.__applyTheme === 'function') {
           window.__applyTheme(next);
         }
+        updatePressed();
         updateLabel();
       });
     }
