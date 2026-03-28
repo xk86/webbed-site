@@ -50,7 +50,7 @@ jobs:
         uses: actions/configure-pages@v6
 
       - name: Build
-        run: npm run 11ty:build
+        run: npm run build-ghpages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
