@@ -15,7 +15,9 @@
           stored = null;
         }
 
-        var theme = stored === 'theme-srs' ? 'theme-srs' : 'theme-silly';
+        // below bool for silly-default
+        // 'theme-srs' ? 'theme-srs' : 'theme-silly';
+        var theme = stored === 'theme-silly' ? 'theme-silly' : 'theme-srs';
         document.documentElement.dataset.theme = theme;
       })();
     </script>
@@ -29,7 +31,8 @@
     <script webc:keep>
       (function () {
         function normalize(theme) {
-          return theme === 'theme-srs' ? 'theme-srs' : 'theme-silly';
+          //'theme-srs' ? 'theme-srs' : 'theme-silly';
+          return theme === 'theme-silly' ? 'theme-silly' : 'theme-srs';
         }
 
         function apply(theme) {
