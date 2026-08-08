@@ -37,6 +37,7 @@ for (const [route, { file, navLabel }] of pages) {
     assert.match(html, /^<!DOCTYPE html>/i);
     assert.match(html, /<html lang="en"/);
     assert.match(html, /<meta name="viewport" content="width=device-width"/);
+    assert.match(html, /<meta name="description" content="[^"]+"/);
     assert.match(html, /<header class="site-header">/);
     assert.match(html, /<nav[\s\S]*aria-label="Primary"/);
     assert.match(html, /<main>/);
