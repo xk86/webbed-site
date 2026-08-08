@@ -1,14 +1,14 @@
 {
   "name": "webbed-site",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Cat Olive's personal static site.",
+  "private": true,
   "scripts": {
     "pretest": "npm run build",
     "test": "node --test",
-    "build": "npx @11ty/eleventy",
-    "dev": "npx @11ty/eleventy --serve",
-    "build-ghpages": "npx @11ty/eleventy"
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "build-ghpages": "eleventy"
   },
   "repository": {
     "type": "git",
@@ -16,20 +16,23 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MPL-2.0",
+  "engines": {
+    "node": ">=22"
+  },
   "type": "module",
   "bugs": {
     "url": "https://github.com/xk86/webbed-site/issues"
   },
   "homepage": "https://github.com/xk86/webbed-site#readme",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-navigation": "^1.0.5",
-    "@11ty/eleventy-plugin-bundle": "^3.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@11ty/eleventy-plugin-bundle": "^4.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@11ty/eleventy-plugin-webc": "^0.11.2",
-    "@mdx-js/node-loader": "^3.1.0",
-    "react-dom": "^19.1.0",
-    "tsx": "^4.19.3"
+    "@mdx-js/node-loader": "^3.1.1",
+    "react-dom": "^19.2.8",
+    "tsx": "^4.23.11"
   }
 }

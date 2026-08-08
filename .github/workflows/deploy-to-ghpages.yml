@@ -39,7 +39,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: "25.8.1"
+          node-version: "24"
           cache: "npm"
 
       - name: Install
@@ -49,8 +49,8 @@ jobs:
         id: pages
         uses: actions/configure-pages@v6
 
-      - name: Build
-        run: npm run build-ghpages
+      - name: Test and build
+        run: npm test
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
