@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "npm run build",
+    "test": "node --test",
     "build": "npx @11ty/eleventy",
     "dev": "npx @11ty/eleventy --serve",
     "build-ghpages": "npx @11ty/eleventy"

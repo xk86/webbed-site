@@ -12,6 +12,8 @@ const themeNames = ['theme-silly', 'theme-srs'];
 export default function (eleventyConfig) {
   // Pass thru our pub dir (has to be done before input dir)
   eleventyConfig.addPassthroughCopy("pub");
+  eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy(".nojekyll");
   eleventyConfig.setInputDirectory("site");
   eleventyConfig.setLayoutsDirectory("includes/layouts");
 
