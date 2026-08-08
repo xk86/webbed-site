@@ -4,11 +4,12 @@
   "description": "Cat Olive's personal static site.",
   "private": true,
   "scripts": {
+    "clean": "node scripts/clean-output.js",
     "pretest": "npm run build",
     "test": "node --test",
-    "build": "eleventy",
-    "dev": "eleventy --serve",
-    "build-ghpages": "eleventy"
+    "build": "npm run clean && eleventy",
+    "dev": "npm run clean && eleventy --serve",
+    "build-ghpages": "npm run build"
   },
   "repository": {
     "type": "git",
