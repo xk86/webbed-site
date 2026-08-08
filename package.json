@@ -30,9 +30,6 @@
     "@11ty/eleventy-navigation": "^1.0.5",
     "@11ty/eleventy-plugin-bundle": "^4.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "@11ty/eleventy-plugin-webc": "0.12.0-beta.7",
-    "@mdx-js/node-loader": "^3.1.1",
-    "react-dom": "^19.2.8",
-    "tsx": "^4.23.11"
+    "@11ty/eleventy-plugin-webc": "0.12.0-beta.7"
   }
 }

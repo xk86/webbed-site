@@ -1,11 +1,6 @@
-import "tsx/esm";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import {renderToStaticMarkup} from 'react-dom/server';
-import {register} from 'node:module';
-
-register('@mdx-js/node-loader', import.meta.url);
 
 const themeNames = ['theme-silly', 'theme-srs'];
 
@@ -50,16 +45,4 @@ export default function (eleventyConfig) {
     toFileDirectory: "dist",
   });
 
-  /* Extensions Config */
-
-  // Add template extensions
-  eleventyConfig.addExtension(["mdx","11ty.jsx","11ty.ts","11ty.tsx"], {
-    key: "11ty.js",
-    compile: () => {
-      return async function(data) {
-        let content = await this.defaultRenderer(data);
-        return renderToStaticMarkup(content);
-      };
-    }
-  });
 };
